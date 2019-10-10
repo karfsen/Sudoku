@@ -12,6 +12,6 @@ public class Main {
                 {3,0,0,0,0,1,9,0,0}
         };
         Sudoku sudoku=new Sudoku(pole);
-        sudoku.writeMatrix(pole);
+        sudoku.writeMatrix(sudoku.SolveMatrix());
     }
 }
