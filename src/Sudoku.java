@@ -34,10 +34,35 @@ public class Sudoku {
         return false;
     }
 
+    public boolean solverino(){
+        for(int row=0;row<9;row++){
+            for (int col=0;col<9;col++){
+                if(gameplan[row][col]==0){
+                    for (int i=1;i<9;i++){
+                        System.out.println("skušam "+i+" na pozicii ["+row+","+col+"]");
+                        if (!(rowCheck(row,i)||colCheck(col,i)||boxCheck(row,col,i))){
+                            System.out.println("davam "+i+" na poziciu ["+row+","+col+"]");
+                            gameplan[row][col]=i;
+                            writeMatrix();
+                            if(solverino()){
+                                return true;
+                            }
+                            else{
+                                gameplan[row][col]=0;
+                            }
+                        }
+                    }
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
 
 
-    public void writeMatrix(int[][] gameplan) {
+
+    public void writeMatrix() {
         for (int i = 0; i < 9; ++i) {
             if (i % 3 == 0)
                 System.out.println(" -----------------------");
