@@ -65,16 +65,16 @@ public class Sudoku {
     public void writeMatrix() {
         for (int i = 0; i < 9; ++i) {
             if (i % 3 == 0)
-                System.out.println(" -----------------------");
+                System.out.println(" ----------------------------------");
             for (int j = 0; j < 9; ++j) {
-                if (j % 3 == 0) System.out.print("| ");
+                if (j % 3 == 0) System.out.print("  |  ");
                 System.out.print(gameplan[i][j] == 0 ? " " : Integer.toString(gameplan[i][j]));
 
                 System.out.print(' ');
             }
-            System.out.println("|");
+            System.out.println(" | ");
         }
-        System.out.println(" -----------------------");
+        System.out.println(" ----------------------------------");
     }
 
 
